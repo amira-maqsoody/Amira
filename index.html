@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surah Al-Fatiha & Amira Gebet</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@500;700&family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #f7f3e9;
+            --card-bg: #fffdf7;
+            --border-gold: #c5a059;
+            --border-light: #e5d5b5;
+            --text-dark: #2c2825;
+            --text-gold: #a37c3f;
+            --text-green: #2d5a43;
+            --sub-text: #6b6255;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+            background-image: radial-gradient(#e5d5b5 0.5px, transparent 0.5px);
+            background-size: 15px 15px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 2px solid var(--border-gold);
+            border-radius: 12px;
+            max-width: 500px;
+            width: 100%;
+            padding: 25px 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+            text-align: center;
+            outline: 4px solid var(--card-bg);
+            outline-offset: -8px;
+        }
+
+        /* Inner border frame */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 6px; left: 6px; right: 6px; bottom: 6px;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            pointer-events: none;
+        }
+
+        .header-title {
+            font-family: 'Amiri', serif;
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 2px;
+        }
+
+        .header-subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 0.95rem;
+            color: var(--text-green);
+            font-weight: 700;
+        }
+
+        .header-subtext {
+            font-size: 0.8rem;
+            color: var(--sub-text);
+            margin-bottom: 15px;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 12px 0;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            height: 1px;
+            width: 60px;
+            background: linear-gradient(to right, transparent, var(--border-gold), transparent);
+        }
+
+        .divider-icon {
+            color: var(--border-gold);
+            font-size: 10px;
+            margin: 0 8px;
+        }
+
+        /* Surah Verses List */
+        .verse-container {
+            margin-bottom: 18px;
+        }
+
+        .verse-num {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            border: 1px solid var(--border-gold);
+            transform: rotate(45deg);
+            margin-bottom: 6px;
+        }
+
+        .verse-num span {
+            display: block;
+            transform: rotate(-45deg);
+            font-size: 0.75rem;
+            line-height: 20px;
+            color: var(--text-gold);
+            font-weight: bold;
+        }
+
+        .arabic-text {
+            font-family: 'Amiri', serif;
+            font-size: 1.55rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+            direction: rtl;
+            margin-bottom: 3px;
+        }
+
+        .german-translation {
+            font-size: 0.82rem;
+            color: var(--sub-text);
+            line-height: 1.35;
+            font-weight: 400;
+        }
+
+        /* Amira Box */
+        .amira-box {
+            background-color: rgba(247, 243, 233, 0.4);
+            border: 1px solid var(--border-gold);
+            border-radius: 10px;
+            padding: 18px 15px;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .amira-bismillah {
+            font-family: 'Amiri', serif;
+            font-size: 1.25rem;
+            color: var(--text-gold);
+            margin-bottom: 6px;
+        }
+
+        .amira-name-en {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: var(--text-green);
+            font-weight: 700;
+        }
+
+        .amira-name-ar {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            color: var(--text-gold);
+            line-height: 1.2;
+        }
+
+        .amira-meaning {
+            font-size: 0.75rem;
+            font-style: italic;
+            color: var(--sub-text);
+            margin-bottom: 12px;
+        }
+
+        .amira-dua {
+            font-size: 0.82rem;
+            font-style: italic;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- Header -->
+        <div class="header-title">سُورَةُ الْفَاتِحَةِ</div>
+        <div class="header-subtitle">Die Eröffnung</div>
+        <div class="header-subtext">(Sure 1)</div>
+
+        <div class="divider"><span class="divider-icon">◆</span></div>
+
+        <!-- Vers 1 -->
+        <div class="verse-container">
+            <div class="verse-num"><span>1</span></div>
+            <div class="arabic-text">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+            <div class="german-translation">Im Namen Allahs, des Allerbarmers, des Barmherzigen.</div>
+        </div>
+
+        <div class="divider"><span class="divider-icon">◆</span></div>
+
+        <!-- Vers 2 -->
+        <div class="verse-container">
+            <div class="verse-num"><span>2</span></div>
+            <div class="arabic-text">الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ</div>
+            <div class="german-translation">Alles Lob gebührt Allah, dem Herrn der Welten.</div>
+        </div>
+
+        <div class="divider"><span class="divider-icon">◆</span></div>
+
+        <!-- Vers 3 -->
+        <div class="verse-container">
+            <div class="verse-num"><span>3</span></div>
+            <div class="arabic-text">الرَّحْمَٰنِ الرَّحِيمِ</div>
+            <div class="german-translation">Dem Allerbarmer, dem Barmherzigen.</div>
+        </div>
+
+        <div class="divider"><span class="divider-icon">◆</span></div>
+
+        <!-- Vers 4 -->
+        <div class="verse-container">
+            <div class="verse-num"><span>4</span></div>
+            <div class="arabic-text">مَالِكِ يَوْمِ الدِّينِ</div>
+            <div class="german-translation">Dem Herrscher über den Tag des Gerichts.</div>
+        </div>
+
+        <div class="divider"><span class="divider-icon">◆</span></div>
+
+        <!-- Vers 5 -->
+        <div class="verse-container">
+            <div class="verse-num"><span>5</span></div>
+            <div class="arabic-text">إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ</div>
+            <div class="german-translation">Dich allein dienen wir in der Anbetung, und Dich allein bitten wir um Hilfe.</div>
+        </div>
+
+        <div class="divider"><span class="divider-icon">◆</span></div>
+
+        <!-- Vers 6 -->
+        <div class="verse-container">
+            <div class="verse-num"><span>6</span></div>
+            <div class="arabic-text">اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ</div>
+            <div class="german-translation">Führe uns den geraden Weg.</div>
+        </div>
+
+        <div class="divider"><span class="divider-icon">◆</span></div>
+
+        <!-- Vers 7 -->
+        <div class="verse-container">
+            <div class="verse-num"><span>7</span></div>
+            <div class="arabic-text">صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ</div>
+            <div class="german-translation">Den Weg derer, denen Du Gnade erwiesen hast, nicht derer, die Deinen Zorn erregt haben, und nicht der Irregehenden.</div>
+        </div>
+
+        <!-- Amira Dedicated Box -->
+        <div class="amira-box">
+            <div class="amira-bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+            <div class="amira-name-en">Amira</div>
+            <div class="amira-name-ar">أَمِيرَة</div>
+            <div class="amira-meaning">Prinzessin • Anführerin</div>
+            
+            <div class="divider"><span class="divider-icon">◆</span></div>
+
+            <div class="amira-dua">
+                „Möge Allah Amira mit Rechtleitung, Frieden und Gesundheit segnen. Möge Er ihren Weg erleuchten, ihr bei jedem Schritt Weisheit schenken, sie vor allen Schaden beschützen und ihr Herz mit Freude und Zufriedenheit erfüllen. Amin.“
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
